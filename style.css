@@ -1,0 +1,126 @@
+/* basic style => for all pages */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-size: 60%;
+  position: relative;
+}
+/* Fade in animation for first intro page */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Fade in animation for in-game question */
+@keyframes fadeIn2 {
+  0% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  animation: fadeIn 1.5s linear;
+}
+.intro {
+  height: 80vh;
+  text-align: center;
+}
+/* Pulsalting animation for the remaining intro  */
+@keyframes pulsate {
+  0% {
+    opacity: 1;
+    transform: scale(0.5);
+    margin-left: -13em;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+    margin-left: -13em;
+  }
+  60% {
+    transform: scale(1);
+    opacity: 1;
+    margin-left: -13em;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+    margin-left: -13em;
+  }
+}
+/* other class properties */
+.container {
+  height: 100vh;
+  width: 100vw;
+  padding: 5px;
+  text-align: center;
+}
+.center {
+  text-align: center;
+}
+.fadeInLastQuery {
+  animation: fadeIn2 200s 1;
+  opacity: 0;
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.markup {
+  opacity: 0;
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulsate 3s 1;
+}
+.markup-2 {
+  animation-delay: 4s;
+}
+.markup-3 {
+  animation-delay: 8s;
+}
+.markup-4 {
+  animation-delay: 12s;
+}
+.markup-5 {
+  animation-delay: 16s;
+}
+.markup-6 {
+  animation-delay: 20s;
+}
+.startGame-query {
+  font-size: 10px;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: fadeIn2 400s 1 4s;
+}
+.footer {
+  font-size: 30px;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
