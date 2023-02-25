@@ -6,11 +6,45 @@
 }
 a {
   text-decoration: none;
+  text-align: center;
+  color: #ce4415;
+}
+a:hover {
+  color: #90d4c6;
+}
+@font-face {
+  font-family: Gothic;
+  src: url(Gothic.otf);
 }
 body {
-  font-size: 60%;
-  position: relative;
+  background-color: #151a1e;
+  color: #dbd1b7;
+  font-family: Gothic;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  box-sizing: border-box;
 }
+h2 {
+  display: block;
+  text-align: center;
+  font-size: 3rem;
+  letter-spacing: 0.2rem;
+  line-height: 4rem;
+}
+img {
+  height: 1.8rem;
+  width: 12rem;
+}
+
+.spent-logo {
+  position: fixed;
+  left: 50%;
+  bottom: 4vh;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+}
+
 /* Fade in animation for first intro page */
 @keyframes fadeIn {
   from {
@@ -20,8 +54,47 @@ body {
     opacity: 1;
   }
 }
+/*  style => for intro page */
+.intro {
+  padding: 2rem;
+  margin-top: 15vh;
+  width: 100%;
+
+  display: inline-block;
+  animation: fadeIn 1.5s linear;
+  transition: all 0.1s;
+}
+.link,
+.link-intro {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 2rem;
+
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text {
+  letter-spacing: 0.05em;
+  letter-spacing: 0.5rem;
+}
+.button {
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #ce4415;
+  color: #0f1214;
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+.button:hover {
+  background-color: #90d4c6;
+}
+
 /* Fade in animation for in-game question */
-@keyframes fadeIn2 {
+@keyframes fadeInlast {
   0% {
     opacity: 0;
   }
@@ -35,63 +108,54 @@ body {
     opacity: 1;
   }
 }
-.fadeIn {
-  animation: fadeIn 1.5s linear;
-}
-.intro {
-  height: 80vh;
-  text-align: center;
-}
-/* Pulsalting animation for the remaining intro  */
+
+/* Pulsalting animation for the remaining intro */
+
 @keyframes pulsate {
   0% {
     opacity: 1;
     transform: scale(0.5);
-    margin-left: -13em;
   }
   50% {
     transform: scale(1);
     opacity: 1;
-    margin-left: -13em;
   }
   60% {
     transform: scale(1);
     opacity: 1;
-    margin-left: -13em;
   }
   100% {
     transform: scale(2);
     opacity: 0;
-    margin-left: -13em;
   }
 }
-/* other class properties */
+
+/* other class properties for animations */
 .container {
-  height: 100vh;
-  width: 100vw;
-  padding: 5px;
-  text-align: center;
+  height: 100%;
+  width: 100%;
 }
-.center {
-  text-align: center;
-}
+.markup,
 .fadeInLastQuery {
-  animation: fadeIn2 200s 1;
-  opacity: 0;
-  text-align: center;
+  display: inline-block;
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+  width: 100%;
+
   position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 45%;
+  left: 25%;
+  margin-left: -25%;
+  margin-right: 25%;
+
+  opacity: 0;
+  transition: all 0.1s;
 }
 .markup {
-  opacity: 0;
-  text-align: center;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   animation: pulsate 3s 1;
+}
+.fadeInLastQuery {
+  animation: fadeInlast 200s 1 20s;
 }
 .markup-2 {
   animation-delay: 4s;
@@ -105,22 +169,29 @@ body {
 .markup-5 {
   animation-delay: 16s;
 }
-.markup-6 {
-  animation-delay: 20s;
-}
+
 .startGame-query {
-  font-size: 10px;
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+
   position: absolute;
   top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  animation: fadeIn2 400s 1 4s;
+  animation: fadeInlast 400s 1 4s;
 }
-.footer {
-  font-size: 30px;
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+
+/* //bug to fix// 
+@media only screen and (max-width: 700px) {
+  .intro {
+    margin-top: 35vh;
+  }
+  .link {
+    font-size: 3.5rem;
+    margin-top: -7rem;
+  }
+  .startGame-query {
+    font-size: 3rem;
+  }
+} */
