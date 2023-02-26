@@ -1,51 +1,37 @@
-/* basic style => for all pages */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-a {
-  text-decoration: none;
-  text-align: center;
-  color: #ce4415;
-}
-a:hover {
-  color: #90d4c6;
-}
-@font-face {
-  font-family: Gothic;
-  src: url(Gothic.otf);
-}
-body {
-  background-color: #151a1e;
-  color: #dbd1b7;
-  font-family: Gothic;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-h2 {
-  display: block;
-  text-align: center;
-  font-size: 3rem;
-  letter-spacing: 0.2rem;
-  line-height: 4rem;
-}
-img {
-  height: 1.8rem;
-  width: 12rem;
-}
+/* Animation keyframes */
+@keyframes intro {
+  0% {
+    transform: perspective(2000px) translate3d(0, -50%, -1300px);
+    animation-timing-function: cubic-bezier(0.2, 0.655, 0.4, 0.885);
+    opacity: 0;
+  }
 
-.spent-logo {
-  position: fixed;
-  left: 50%;
-  bottom: 4vh;
-  transform: translate(-50%, -50%);
-  margin: 0 auto;
-}
+  50% {
+    transform: perspective(2000px) translate3d(0, -50%, 0);
+    animation-timing-function: cubic-bezier(0.4, 0.015, 0.595, 0.99);
+    opacity: 1;
+  }
 
-/* Fade in animation for first intro page */
+  100% {
+    transform: perspective(2000px) translate3d(0, -50%, 1300px);
+    animation-timing-function: cubic-bezier(0.735, 0.045, 0.95, 0.5);
+    opacity: 0;
+  }
+}
+@keyframes introEnd {
+  0% {
+    transform: perspective(2000px) translate3d(0, -50%, -100px);
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: perspective(2000px) translate3d(0, -50%, 0);
+    opacity: 1;
+  }
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -54,21 +40,76 @@ img {
     opacity: 1;
   }
 }
-/*  style => for intro page */
-.intro {
-  padding: 2rem;
-  margin-top: 15vh;
+/* default styling */
+:root {
+  --primary: #151a1e;
+  --secondary: #dbd1b7;
+  --tertiary: #ce4415;
+  --hover: #90d4c6;
+}
+@font-face {
+  font-family: Gothic;
+  src: url(Gothic.otf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: block;
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-family: Gothic;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Basic style => for all pages */
+a {
+  text-decoration: none;
+  text-align: center;
+  color: var(--tertiary);
+}
+a:hover {
+  color: var(--hover);
+}
+.spent-img {
+  height: 3.5rem;
+  width: 28rem;
+}
+.spent-logo {
+  position: fixed;
+  left: 50%;
+  bottom: 1vh;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+}
+
+/*  style => for intro.html */
+.welcome {
+  display: inline-block;
+  margin-top: 27vh;
   width: 100%;
+  padding: 5rem;
 
   display: inline-block;
   animation: fadeIn 1.5s linear;
   transition: all 0.1s;
 }
-.link,
-.link-intro {
+.welcome-message {
+  font-size: 5rem;
+  letter-spacing: 0.05em;
+  line-height: 6rem;
+  font-weight: 100;
+  text-align: center;
+}
+
+.i-link {
   display: inline-block;
-  margin-top: 2rem;
-  font-size: 2rem;
+  margin-top: -5rem;
+  width: max-content;
 
   position: absolute;
   top: 65%;
@@ -76,122 +117,81 @@ img {
   transform: translate(-50%, -50%);
 }
 
-.text {
+.i-text {
+  color: var(--tertiary);
+  display: block;
+  font-size: 12rem;
   letter-spacing: 0.05em;
-  letter-spacing: 0.5rem;
+  margin-bottom: 8px;
 }
+
 .button {
-  padding: 1rem;
+  font-size: 5rem;
+  background: none;
+  border: none;
+  padding: 10px 20px;
   border-radius: 5px;
-  background-color: #ce4415;
-  color: #0f1214;
+  background-color: var(--tertiary);
+  color: var(--primary);
   display: inline-block;
   margin-top: 2rem;
 }
 
 .button:hover {
-  background-color: #90d4c6;
+  background-color: var(--hover);
 }
 
-/* Fade in animation for in-game question */
-@keyframes fadeInlast {
-  0% {
-    opacity: 0;
-  }
-  2% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/* Pulsalting animation for the remaining intro */
-
-@keyframes pulsate {
-  0% {
-    opacity: 1;
-    transform: scale(0.5);
-  }
-  50% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  60% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-/* other class properties for animations */
+/* style => for narrative.html  */
 .container {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
 }
-.markup,
-.fadeInLastQuery {
-  display: inline-block;
-  font-size: 2rem;
+
+.markup {
+  text-align: center;
+}
+
+.markup > * {
+  font-size: 7rem;
   letter-spacing: 0.5rem;
-  width: 100%;
 
   position: absolute;
-  top: 45%;
-  left: 25%;
-  margin-left: -25%;
-  margin-right: 25%;
-
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
   opacity: 0;
-  transition: all 0.1s;
 }
-.markup {
-  animation: pulsate 3s 1;
+.markup > :nth-child(1) {
+  animation: intro 3s 1;
 }
-.fadeInLastQuery {
-  animation: fadeInlast 200s 1 20s;
+.markup > :nth-child(2) {
+  animation: intro 3s 1 4s;
 }
-.markup-2 {
-  animation-delay: 4s;
+.markup > :nth-child(3) {
+  animation: intro 3s 1 8s;
 }
-.markup-3 {
-  animation-delay: 8s;
+.markup > :nth-child(4) {
+  animation: intro 3s 1 12s;
 }
-.markup-4 {
-  animation-delay: 12s;
+.markup > :nth-child(5) {
+  animation: intro 3s 1 16s;
 }
-.markup-5 {
-  animation-delay: 16s;
+.markup > :nth-child(6) {
+  animation: introEnd 300s 1 20s;
 }
 
 .startGame-query {
-  font-size: 1.5rem;
-  letter-spacing: 0.2rem;
+  font-size: 4rem;
+  letter-spacing: 0.5rem;
+  width: 65vw;
 
   position: absolute;
   top: 65%;
-  left: 50%;
+  left: 20%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  animation: fadeInlast 400s 1 4s;
+  animation: introEnd 400s 1 4s;
 }
-
-/* //bug to fix// 
-@media only screen and (max-width: 700px) {
-  .intro {
-    margin-top: 35vh;
-  }
-  .link {
-    font-size: 3.5rem;
-    margin-top: -7rem;
-  }
-  .startGame-query {
-    font-size: 3rem;
-  }
-} */
+.startGame-query > span {
+  margin: 2rem;
+}
