@@ -7,7 +7,7 @@
 }
 @font-face {
   font-family: Gothic;
-  src: url(Gothic.otf);
+  src: url(../Gothic.otf);
 }
 * {
   margin: 0;
