@@ -37,6 +37,13 @@ body {
   height: 66%;
   display: block;
 }
+
+.content_head-main {
+  background: url(top\ image.jpg) no-repeat top center transparent;
+}
+.content_head-sub {
+  background: url(teddy.jpg) no-repeat top center transparent;
+}
 @media only screen and (orientation: portrait) {
   .content_head {
     display: block;
@@ -51,12 +58,16 @@ body {
 }
 @media only screen and (orientation: portrait) {
   .content_head-main img {
+    background: url(top\ image.jpg) no-repeat top center transparent;
+    background-size: contain;
     display: none;
   }
 }
 @media only screen and (orientation: portrait) {
   .content_head-sub img {
     display: none;
+    background: url(teddy.jpg) no-repeat top center transparent;
+    background-size: contain;
   }
 }
 
@@ -103,5 +114,7 @@ body {
 @media only screen and (orientation: portrait) {
   .content_spent-main img {
     display: none;
+    background: url(spent.logo.png) no-repeat top center transparent;
+    background-size: contain;
   }
 }
