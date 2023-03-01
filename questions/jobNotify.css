@@ -133,6 +133,10 @@ img {
   transform: translate(-50%, -50%);
   margin: 0 auto;
 }
+/* left */
+.left {
+  width: 97vw;
+}
 /* right */
 .right {
   display: flex;
@@ -140,17 +144,19 @@ img {
   font-size: 2rem;
   align-items: center;
   justify-content: center;
-  width: 10rem;
+  width: 3vw;
   margin-bottom: -2rem;
   height: fit-content;
+  position: relative;
 }
 .right > span {
   opacity: 0.5;
   width: 1rem;
   height: 3.2vh;
 }
-dol {
+.right dol {
+  position: absolute;
   font-size: 0.85rem;
-  margin-right: -0.45rem;
-  margin-left: -0.5rem;
+  left: -0.6rem;
+  margin-top: -0.2rem;
 }
