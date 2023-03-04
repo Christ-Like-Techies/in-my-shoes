@@ -40,6 +40,33 @@
     opacity: 1;
   }
 }
+@keyframes contentIn {
+  0% {
+    transform: perspective(2000px) translate3d(0, 0, -1300px);
+    animation-timing-function: cubic-bezier(0.2, 0.655, 0.4, 0.885);
+    opacity: 0;
+  }
+
+  100% {
+    transform: perspective(2000px) translate3d(0, 0, 0);
+    animation-timing-function: cubic-bezier(0.4, 0.015, 0.595, 0.99);
+    opacity: 1;
+  }
+}
+@keyframes contentOut {
+  0% {
+    transform: perspective(2000px) translate3d(0, 0, 0);
+    animation-timing-function: cubic-bezier(0.4, 0.015, 0.595, 0.99);
+    opacity: 1;
+  }
+
+  100% {
+    transform: perspective(2000px) translate3d(0, 0, 1300px);
+    animation-timing-function: cubic-bezier(0.735, 0.045, 0.95, 0.5);
+    opacity: 0;
+  }
+}
+
 /* default styling */
 :root {
   --primary: #151a1e;
