@@ -61,7 +61,8 @@ body {
 /* body */
 .j-wrap {
   position: relative;
-  height: 67vh;
+  /* height: 67vh; */
+  height: auto;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -87,7 +88,7 @@ body {
 }
 .j-wrap > :nth-child(4)::after {
   content: "";
-  height: 0.1rem;
+  /* height: 0.1rem; */
   width: 2rem;
   background-color: #ce4415;
   position: absolute;
@@ -160,3 +161,5 @@ img {
   left: -0.6rem;
   margin-top: -0.2rem;
 }
+
+
