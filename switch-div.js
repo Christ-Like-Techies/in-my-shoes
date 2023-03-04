@@ -14,6 +14,52 @@ window.onload = () => {
    *
    */
 
+  let questions = [
+    {
+      note: "One of your co-workers has gotten seriously ill. Because your company doesn’t offer sick days, everyone is contributing $20 to help her out.",
+      optionOne: "PITCH IN",
+      optionTwo: "SAY YOU FORGOT YOUR WALLET",
+      optionThree: "",
+      result: "void",
+      optionOneMoneyAdded: 0,
+      optionOneMoneyRemoved: 0,
+      optionTwoMoneyAdded: 0,
+      optionTwoMoneyRemoved: 0,
+      optionThreeMoneyAdded: 0,
+      optionThreeMoneyRemoved: 0,
+    },
+    {
+      note: "A family friend sends your child a card. Inside is $10.",
+      optionOne: "GIVE YOUR CHILD THE $10",
+      optionTwo: "KEEP THE $10",
+      optionThree: "",
+      result: "void",
+      moneyAdded: 0,
+      moneyRemoved: 0,
+      optionOneMoneyAdded: 0,
+      optionOneMoneyRemoved: 0,
+      optionTwoMoneyAdded: 0,
+      optionTwoMoneyRemoved: 0,
+      optionThreeMoneyAdded: 0,
+      optionThreeMoneyRemoved: 0,
+    },
+    {
+      note: "Your best friend from childhood is getting married, and they want you to be in the wedding. The only problem: It's in another state.",
+      optionOne: "FLY TO THE WEDDING ($350)",
+      optionTwo: "SAY YOU CAN'T GO",
+      optionThree: "",
+      result: "SOME RESULT TEXT",
+      moneyAdded: 0,
+      moneyRemoved: 0,
+      optionOneMoneyAdded: 0,
+      optionOneMoneyRemoved: 0,
+      optionOneMoneyAdded: 0,
+      optionOneMoneyRemoved: 0,
+      optionThreeMoneyAdded: 0,
+      optionThreeMoneyRemoved: 0,
+    },
+  ];
+
   const proveIt = document.getElementById("prove-it");
   const proveItBtn = document.getElementById("prove-it-btn");
 
@@ -63,73 +109,51 @@ window.onload = () => {
   );
   const findAPlace = document.getElementById("findAPlace");
 
-  healthContinueGold.addEventListener("click", function() {
+  healthContinueGold.addEventListener("click", function () {
     healthResultGold.style.display = "none";
     findAPlace.style.display = "block";
-  })
-  healthContinueSilver.addEventListener("click", function() {
+  });
+  healthContinueSilver.addEventListener("click", function () {
     healthResultSilver.style.display = "none";
     findAPlace.style.display = "block";
-  })
-  healthContinueBronze.addEventListener("click", function() {
+  });
+  healthContinueBronze.addEventListener("click", function () {
     healthResultBronze.style.display = "none";
     findAPlace.style.display = "block";
+  });
+
+  const payForPlace = document.getElementById("pay-for-place");
+  const findAPlaceResult = document.getElementById("findAPlaceResult");
+  payForPlace.addEventListener("click", function () {
+    findAPlaceResult.style.display = "block";
+    findAPlace.style.display = "none";
+  });
+
+  const findAPlaceContinue = document.getElementById("findAPlaceContinue");
+  const firstHouseQuestion = document.getElementById("first-house-question");
+  findAPlaceContinue.addEventListener("click", function() {
+    firstHouseQuestion.style.display = "block"
+    findAPlaceResult.style.display = "none";
   })
 
+
+
   const template = document.getElementById("template");
-  const buttonNext = document.querySelector(".next");
   const resultTemp = document.getElementById("result-temp");
   const resultOk = document.getElementById("result-ok");
 
-  const note = document.getElementById("note");
-  const question = document.getElementById("question");
+  // const note = document.getElementById("note");
+  // const question = document.getElementById("question");
 
-  const optionOne = document.getElementById("option-one");
-  const optionTwo = document.getElementById("option-two");
-  const optionThree = document.getElementById("option-three");
+  // const optionOne = document.getElementById("option-one");
+  // const optionTwo = document.getElementById("option-two");
+  // const optionThree = document.getElementById("option-three");
 
   const lastPage = document.getElementById("last-page");
-
-  const note1 = "Your new apartment is too small for your stuff";
-  const note2 =
-    "Your landlord found out that you have a pet, and now you have to pay a $350 pet fee.";
-  const note3 =
-    "You're driving with your kid in the backseat when your car slips on a slick streach";
-
-  const ques1 = "WHAT DO YOU WANT TO DO?";
-  const ques2 = "WHAT DO YOU WANT TO DO?";
-  const ques3 = "WHAT DO YOU WANT TO DO?";
-
-  const optionOne1 = "rent a storage unit($45)";
-  const optionOne2 = "pay the fee";
-  const optionOne3 = "pay the damage($550)";
-
-  const optionTwo1 = "have a yard sale";
-  const optionTwo2 = "take your pet to the animal shelter";
-  const optionTwo3 = "drive away";
-
-  const optionThree1 = "ask a friend to store it";
-  const optionThree2 = "ask a friend to take your pet";
-  const optionThree3 = "";
 
   proveItBtn.addEventListener("click", function () {
     proveIt.style.display = "none";
     canPlay.style.display = "block";
-  });
-
-  buttonNext.addEventListener("click", function () {
-    resultTemp.style.display = "block";
-    template.style.display = "none";
-
-    // loop through the NodeList to find the element you want to modify
-    for (let i = 0; i < elements.length; i++) {
-      const element = elements[i];
-
-      if (i === 0) {
-        // set the new id for the element
-        element.setAttribute("id", "one");
-      }
-    }
   });
 
   findJob.addEventListener("click", function () {
@@ -175,29 +199,42 @@ window.onload = () => {
     officeTempPrompt.style.display = "none";
   });
 
-  optionOne.addEventListener("click", function () {
-    resultTemp.style.display = "block";
-    template.style.display = "none";
+  // optionOne.addEventListener("click", function () {
+  //   // resultTemp.style.display = "block";
+  //   // template.style.display = "none";
+  // });
 
-    note.innerHTML = note1;
-    optionOne.innerHTML = optionOne1;
-    optionTwo.innerHTML = optionTwo1;
-    optionThree.innerHTML = optionThree1;
-    question.innerHTML = ques1;
-  });
+  // optionTwo.addEventListener("click", function () {
+  //   resultTemp.style.display = "block";
+  //   template.style.display = "none";
+  // });
 
-  optionTwo.addEventListener("click", function () {
-    resultTemp.style.display = "block";
-    template.style.display = "none";
-  });
-
-  optionThree.addEventListener("click", function () {
-    resultTemp.style.display = "block";
-    template.style.display = "none";
-  });
+  // optionThree.addEventListener("click", function () {
+  //   resultTemp.style.display = "block";
+  //   template.style.display = "none";
+  // });
 
   resultOk.addEventListener("click", function () {
     resultTemp.style.display = "none";
     template.style.display = "block";
   });
+
+
+  const optionOneQue = document.getElementById("option-one-que");
+  const optionTwoQue = document.getElementById("option-two-que");
+  const optionThreeQue = document.getElementById("option-three-que");
+  const firstQuestionResponseResult = document.getElementById("first-question-response-result");
+
+  optionOneQue.addEventListener("click", function() {
+    firstHouseQuestion.style.display = "none";
+    firstQuestionResponseResult.style.display = "block";
+  })
+  optionTwoQue.addEventListener("click", function() {
+    firstHouseQuestion.style.display = "none";
+    firstQuestionResponseResult.style.display = "block";
+  })
+  optionThreeQue.addEventListener("click", function() {
+    firstHouseQuestion.style.display = "none";
+    firstQuestionResponseResult.style.display = "block";
+  })
 };
