@@ -89,53 +89,60 @@ a:hover {
 
 /*  style => for intro.html */
 .welcome {
-  display: inline-block;
-  margin-top: 27vh;
-  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   padding: 5rem;
-
-  display: inline-block;
-  animation: fadeIn 1.5s linear;
-  transition: all 0.1s;
 }
-.welcome-message {
+.welcome > :nth-child(1) {
   font-size: 5rem;
-  letter-spacing: 0.05em;
-  line-height: 6rem;
-  font-weight: 100;
   text-align: center;
+  margin-top: 20vh;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  font-weight: normal;
+}
+.welcome > :nth-child(2) {
+  font-size: 6rem;
+  text-align: center;
+  letter-spacing: 0.05em;
 }
 .i-link {
-  display: inline-block;
-  margin-top: -5rem;
-  width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-  position: absolute;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.i-text {
-  color: var(--tertiary);
-  display: block;
-  font-size: 12rem;
-  letter-spacing: 0.05em;
-  margin-bottom: 8px;
-}
-.button {
-  font-size: 5rem;
-  background: none;
-  border: none;
+.i-button {
   padding: 10px 20px;
   border-radius: 5px;
   background-color: var(--tertiary);
   color: var(--primary);
-  display: inline-block;
-  margin-top: 2rem;
+  font-size: 5rem;
 }
-.button:hover {
+.i-button:hover {
   background-color: var(--hover);
 }
+/* @media only screen and (min-width: 480px) {
+  .welcome > :nth-child(1) {
+    padding: 15rem;
+    font-size: 4rem;
+    margin-top: 20vh;
+  }
+  .welcome > :nth-child(2) {
+    font-size: 3rem;
+    margin-top: 2rem;
+  }
+  .i-link > span {
+    font-size: 2rem;
+  }
+  .spent-img {
+    height: 1.5rem;
+    width: 20rem;
+  }
+} */
 
 /* style => for narrative.html  */
 .container {
