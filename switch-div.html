@@ -8,6 +8,10 @@
     <title>switches</title>
   </head>
   <body>
+    <div id="score-and-day">
+        <span id="score">1000</span>
+        <span id="current-day">1</span>
+    </div>
     <div id="prove-it">
       <p>urban ministries of durham serves over 6,000 people every year</p>
       <h1>prove it</h1>
@@ -32,24 +36,6 @@
       <a class="sec-shift">2nd shift</a> <br />
       <a class="join-our">join our team!</a> <br />
       <a class="office-temp">office temp</a> <br />
-
-      <div>
-        <button class="next">next</button>
-      </div>
-    </div>
-
-    <div id="template">
-      <h1 id="note">You're running out of money fast</h1>
-      <h2 id="question">
-        Its time to get a job - nay job Here's what's available choose one:
-      </h2>
-      <a id="option-one">2nd shift</a> <br />
-      <a id="option-two">join our team!</a> <br />
-      <a id="option-three">office temp</a> <br />
-
-      <div>
-        <button class="next">next</button>
-      </div>
     </div>
 
     <div id="joinOurTeam">
@@ -63,7 +49,7 @@
       <h1>STAY HEALTHY!</h1>
       <p>All that lifting and repetitive packing can be brutal...</p>
       <h3>$306</h3>
-      <button class="continue-health-2">Continuexx</button>
+      <button class="continue-health-2">Continue</button>
     </div>
 
     <div id="officeTempPrompt">
@@ -110,10 +96,37 @@
     </div>
 
     <div id="findAPlace">
-        <h1>FIND A PLACE TO LIVE</h1>
-        <h2>$725 + $83</h2>
-        <h1>$808</h1>
-        <button id="pay-for-place">PAY</button>
+      <h1>FIND A PLACE TO LIVE</h1>
+      <h2>$725 + $83</h2>
+      <h1>$808</h1>
+      <button id="pay-for-place">PAY</button>
+    </div>
+
+    <!-- results prompt from paying for a house -->
+    <div id="findAPlaceResult">
+      <h1>RESULT</h1>
+      <p>
+        You chose to live farther away from your job, so your rent is lower. But
+        your gas costs are higher. In fact, for every dollar a working family
+        saves on housing, they spend an additional 77 cents on transportation.
+      </p>
+      <button id="findAPlaceContinue">Continue</button>
+    </div>
+
+    <!-- first house question for all options -->
+    <div id="first-house-question">
+      <h2 id="note">Your new apartment is too small for your stuff</h2>
+      <h1 id="question">WHAT DO YOU WANT TO DO?</h1>
+      <a id="option-one-que">RENT A STORAGE UNIT ($45)</a> <br />
+      <a id="option-two-que">HAVE A YARD SALE</a> <br />
+      <a id="option-three-que">ASK A FRIEND TO STORE IT</a> <br />
+    </div>
+
+    <!-- first question response result template -->
+    <div id="first-question-response-result">
+        <h1>RESULT</h1>
+        <h3>some text of the results</h3>
+        <button id="">continue</button>
     </div>
 
     <div id="last-page">
