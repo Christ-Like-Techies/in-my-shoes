@@ -1,0 +1,72 @@
+/* //////////////////////////////////////// */
+/* implementing some changes in organizing and replacing the function of iframe */
+#score-and-day {
+  display: flex;
+  justify-content: space-between;
+}
+
+#score {
+  font-size: 30px;
+}
+#current-day {
+  font-size: 30px;
+}
+
+#can-u-play {
+  display: none;
+}
+
+#joinOurTeam {
+  display: none;
+}
+
+#ndShiftPrompt {
+  display: none;
+}
+
+#officeTempPrompt {
+  display: none;
+}
+
+#health-option {
+  display: none;
+}
+
+#health-result-gold {
+  display: none;
+}
+#health-result-silver {
+  display: none;
+}
+#health-result-bronze {
+  display: none;
+}
+
+#findAPlace {
+  display: none;
+}
+#findAPlaceResult {
+  display: none;
+}
+#first-house-question {
+  display: none;
+}
+#first-question-response-result {
+  display: none;
+}
+
+#result-temp {
+  display: none;
+}
+
+#template {
+  display: none;
+}
+
+.next {
+  margin-top: 2em;
+}
+
+#last-page {
+  display: none;
+}
