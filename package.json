@@ -1,0 +1,13 @@
+{
+  "name": "in-my-shoes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Christ-Like-Techies/in-my-shoes.git",
+  "author": "canicemichael <canicemichael@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1"
+  }
+}
