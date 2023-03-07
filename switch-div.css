@@ -70,3 +70,228 @@
 #last-page {
   display: none;
 }
+
+/* Animation keyframes */
+@keyframes intro {
+  0% {
+    transform: perspective(2000px) translate3d(0, -50%, -1300px);
+    animation-timing-function: cubic-bezier(0.2, 0.655, 0.4, 0.885);
+    opacity: 0;
+  }
+
+  50% {
+    transform: perspective(2000px) translate3d(0, -50%, 0);
+    animation-timing-function: cubic-bezier(0.4, 0.015, 0.595, 0.99);
+    opacity: 1;
+  }
+
+  100% {
+    transform: perspective(2000px) translate3d(0, -50%, 1300px);
+    animation-timing-function: cubic-bezier(0.735, 0.045, 0.95, 0.5);
+    opacity: 0;
+  }
+}
+@keyframes introEnd {
+  0% {
+    transform: perspective(2000px) translate3d(0, -50%, -100px);
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: perspective(2000px) translate3d(0, -50%, 0);
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes contentIn {
+  0% {
+    transform: perspective(2000px) translate3d(0, 0, -1300px);
+    animation-timing-function: cubic-bezier(0.2, 0.655, 0.4, 0.885);
+    opacity: 0;
+  }
+
+  100% {
+    transform: perspective(2000px) translate3d(0, 0, 0);
+    animation-timing-function: cubic-bezier(0.4, 0.015, 0.595, 0.99);
+    opacity: 1;
+  }
+}
+@keyframes contentOut {
+  0% {
+    transform: perspective(2000px) translate3d(0, 0, 0);
+    animation-timing-function: cubic-bezier(0.4, 0.015, 0.595, 0.99);
+    opacity: 1;
+  }
+
+  100% {
+    transform: perspective(2000px) translate3d(0, 0, 1300px);
+    animation-timing-function: cubic-bezier(0.735, 0.045, 0.95, 0.5);
+    opacity: 0;
+  }
+}
+
+/* default styling */
+:root {
+  --primary: #151a1e;
+  --secondary: #dbd1b7;
+  --tertiary: #ce4415;
+  --hover: #90d4c6;
+}
+@font-face {
+  font-family: Gothic;
+  src: url(../Gothic.otf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: block;
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-family: Gothic;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Basic style => for all pages */
+a {
+  text-decoration: none;
+  text-align: center;
+  color: var(--tertiary);
+}
+a:hover {
+  color: var(--hover);
+}
+.spent-img {
+  height: 3.5rem;
+  width: 28rem;
+}
+.spent-logo {
+  position: fixed;
+  left: 50%;
+  bottom: 1vh;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+}
+
+/*  style => for intro.html */
+.welcome {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5rem;
+}
+.welcome > :nth-child(1) {
+  font-size: 5rem;
+  text-align: center;
+  margin-top: 20vh;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  font-weight: normal;
+}
+.welcome > :nth-child(2) {
+  font-size: 6rem;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+.i-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.i-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: var(--tertiary);
+  color: var(--primary);
+  font-size: 5rem;
+}
+.i-button:hover {
+  background-color: var(--hover);
+}
+/* @media only screen and (min-width: 480px) {
+  .welcome > :nth-child(1) {
+    padding: 15rem;
+    font-size: 4rem;
+    margin-top: 20vh;
+  }
+  .welcome > :nth-child(2) {
+    font-size: 3rem;
+    margin-top: 2rem;
+  }
+  .i-link > span {
+    font-size: 2rem;
+  }
+  .spent-img {
+    height: 1.5rem;
+    width: 20rem;
+  }
+} */
+
+/* style => for narrative.html  */
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+.markup {
+  text-align: center;
+}
+.markup > * {
+  font-size: 7rem;
+  letter-spacing: 0.5rem;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.markup > :nth-child(1) {
+  animation: intro 3s 1;
+}
+.markup > :nth-child(2) {
+  animation: intro 3s 1 4s;
+}
+.markup > :nth-child(3) {
+  animation: intro 3s 1 8s;
+}
+.markup > :nth-child(4) {
+  animation: intro 3s 1 12s;
+}
+.markup > :nth-child(5) {
+  animation: intro 3s 1 16s;
+}
+.markup > :nth-child(6) {
+  animation: introEnd 300s 1 20s;
+}
+.startGame-query {
+  font-size: 4rem;
+  letter-spacing: 0.5rem;
+  width: 65vw;
+
+  position: absolute;
+  top: 65%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: introEnd 400s 1 4s;
+}
+.startGame-query > span {
+  margin: 2rem;
+}

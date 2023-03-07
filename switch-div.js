@@ -324,6 +324,11 @@ window.onload = () => {
     findAPlace.style.display = "none";
 
     score = score - 808;
+
+    // the game ends if the score is less than 0
+    if (score <= 0) {
+      // the game ends!
+    }
     scoreText.textContent = score;
   });
 
@@ -341,8 +346,44 @@ window.onload = () => {
       firstQuestionResponseResult.style.display = "none";
       findAPlaceResult.style.display = "none";
 
-      let index = Math.floor(Math.random() * questions.length);
-      let object = questions[index];
+      // edges List + vertices list
+  const vertices = [{a:1, b:1}, {a:2, b:2}, {a:3, b:3}, {a:4, b:4}, {a:5, b:5}]
+
+  const edges = [
+    [questions[0], questions[1]],
+    [questions[1], questions[2]],
+    [questions[3], questions[4]],
+    [questions[5], questions[6]],
+    [questions[7], questions[8]],
+    [questions[9], questions[10]],
+    [questions[10], questions[11]],
+  ]
+
+  // findAdjacentNodes
+  const findAdjacentNodes = function (node) {
+
+    // loop through edges array
+    // Is my node in the connection?
+    // if yes, push the other node in pair, into adjacentNodes array
+    // If no, keep looping
+    const adjacentNodes = []
+    let adjacentNode;
+
+    for (let edge of edges) {
+      // edge = ['A', 'B']
+      const nodeIdx = edge.indexOf(node)
+      if (nodeIdx > -1){
+        adjacentNode = nodeIdx === 0 ? edge[1] : edge[0]
+        adjacentNodes.push(adjacentNode)
+      }
+    }
+    return adjacentNodes
+  }
+
+  let ObjArr = findAdjacentNodes(questions[1])
+
+      // let index = Math.floor(Math.random() * questions.length);
+      let object = ObjArr[0];
       let objOne = object.id;
 
       resultOptionOne = object.resultOne;
@@ -358,9 +399,9 @@ window.onload = () => {
           1
         )
       );
-      console.log("some space");
+      // console.log("some space");
 
-      console.log(questions.length);
+      // console.log(questions.length);
 
       currentDay = currentDay + 1;
       currentDays.textContent = currentDay;
@@ -454,8 +495,12 @@ window.onload = () => {
       let objOne = object.id;
 
       resultTwoOptionOne = object.resultOne;
-      // resultTwoOptionTwo = object.resultTwo;
-      // resultTwoOptionThree = object.resultThree;      
+      resultTwoOptionTwo = object.resultTwo;
+      resultTwoOptionThree = object.resultThree;      
+
+      // resultOptionOne = resultTwoOptionOne;
+      resultOptionTwo = resultTwoOptionTwo;
+      resultOptionThree = resultTwoOptionThree;
 
       // search thru amd remove used array obj
       let output = questions.filter((que) => que.id == objOne);
@@ -497,6 +542,10 @@ window.onload = () => {
       // resultTwoOptionOne = object.resultOne;
       resultTwoOptionTwo = object.resultTwo;
       // resultTwoOptionThree = object.resultThree;
+
+      resultOptionOne = resultTwoOptionOne;
+      // resultOptionTwo = resultTwoOptionTwo;
+      resultOptionThree = resultTwoOptionThree;
       
 
       // search thru amd remove used array obj
@@ -539,6 +588,9 @@ window.onload = () => {
       // resultTwoOptionOne = object.resultOne;
       // resultTwoOptionTwo = object.resultTwo;
       resultTwoOptionThree = object.resultThree;
+
+      resultOptionOne = resultTwoOptionOne;
+      resultOptionTwo = resultTwoOptionTwo;
       
 
       // search thru amd remove used array obj
