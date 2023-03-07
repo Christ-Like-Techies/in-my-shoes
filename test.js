@@ -210,5 +210,38 @@ let questions = [
     return questions;
   }
 
-  removeObj(questions);
-  console.log(cato.length);
+  // removeObj(questions);
+  // console.log(cato.length);
+
+  // edges List + vertices list
+  const vertices = [{a:1, b:1}, {a:2, b:2}, {a:3, b:3}, {a:4, b:4}, {a:5, b:5}]
+
+  const edges = [
+    [vertices[0], vertices[1]],
+    [vertices[1], vertices[2]],
+    [vertices[3], vertices[4]],
+    [vertices[5], vertices[6]],
+  ]
+
+  // findAdjacentNodes
+  const findAdjacentNodes = function (node) {
+
+    // loop through edges array
+    // Is my node in the connection?
+    // if yes, push the other node in pair, into adjacentNodes array
+    // If no, keep looping
+    const adjacentNodes = []
+    let adjacentNode;
+
+    for (let edge of edges) {
+      // edge = ['A', 'B']
+      const nodeIdx = edge.indexOf(node)
+      if (nodeIdx > -1){
+        adjacentNode = nodeIdx === 0 ? edge[1] : edge[0]
+        adjacentNodes.push(adjacentNode)
+      }
+    }
+    return adjacentNodes
+  }
+
+  console.log(findAdjacentNodes(vertices[1]));
