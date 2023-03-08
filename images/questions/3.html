@@ -1,0 +1,23 @@
+<style>
+    * {
+        color: white;
+    }
+</style>
+
+<h1>Question 3</h1>
+
+<h2 id="info" onload="loadInfoFromPrevPage()"></h2>
+
+<p>
+    <a onclick="progressGame('1.html?info=player chose option 1 in the previous page', {balance:-100, day: 2})">option 1</a>
+</p>
+<p>
+    <a onclick="progressGame('1.html?info=player chose option 2 in the previous page', {balance:-200, day: 2})">option 2</a>
+</p>
+<p>
+    <a onclick="progressGame('1.html?info=player chose option 3 in the previous page', {balance:-300, day: 2})">option 3</a>
+</p>
+
+<script src="../../scripts/progress-game.js"></script>
+
+<script src="../../scripts/load-info.js"></script>
