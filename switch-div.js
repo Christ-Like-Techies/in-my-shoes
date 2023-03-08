@@ -328,6 +328,7 @@ window.onload = () => {
     // the game ends if the score is less than 0
     if (score <= 0) {
       // the game ends!
+      lastPage.style.display = "block";
     }
     scoreText.textContent = score;
   });
@@ -346,41 +347,33 @@ window.onload = () => {
       firstQuestionResponseResult.style.display = "none";
       findAPlaceResult.style.display = "none";
 
-      // edges List + vertices list
-  const vertices = [{a:1, b:1}, {a:2, b:2}, {a:3, b:3}, {a:4, b:4}, {a:5, b:5}]
+      const edges = [
+        [questions[0], questions[1]],
+        [questions[1], questions[2]],
+        [questions[3], questions[4]],
+        [questions[5], questions[6]],
+        [questions[7], questions[8]],
+        [questions[9], questions[10]],
+        [questions[10], questions[11]],
+      ];
 
-  const edges = [
-    [questions[0], questions[1]],
-    [questions[1], questions[2]],
-    [questions[3], questions[4]],
-    [questions[5], questions[6]],
-    [questions[7], questions[8]],
-    [questions[9], questions[10]],
-    [questions[10], questions[11]],
-  ]
+      // findAdjacentNodes
+      const findAdjacentNodes = function (node) {
+        const adjacentNodes = [];
+        let adjacentNode;
 
-  // findAdjacentNodes
-  const findAdjacentNodes = function (node) {
+        for (let edge of edges) {
+          // edge = ['A', 'B']
+          const nodeIdx = edge.indexOf(node);
+          if (nodeIdx > -1) {
+            adjacentNode = nodeIdx === 0 ? edge[1] : edge[0];
+            adjacentNodes.push(adjacentNode);
+          }
+        }
+        return adjacentNodes;
+      };
 
-    // loop through edges array
-    // Is my node in the connection?
-    // if yes, push the other node in pair, into adjacentNodes array
-    // If no, keep looping
-    const adjacentNodes = []
-    let adjacentNode;
-
-    for (let edge of edges) {
-      // edge = ['A', 'B']
-      const nodeIdx = edge.indexOf(node)
-      if (nodeIdx > -1){
-        adjacentNode = nodeIdx === 0 ? edge[1] : edge[0]
-        adjacentNodes.push(adjacentNode)
-      }
-    }
-    return adjacentNodes
-  }
-
-  let ObjArr = findAdjacentNodes(questions[1])
+      let ObjArr = findAdjacentNodes(questions[1]);
 
       // let index = Math.floor(Math.random() * questions.length);
       let object = ObjArr[0];
@@ -496,7 +489,7 @@ window.onload = () => {
 
       resultTwoOptionOne = object.resultOne;
       resultTwoOptionTwo = object.resultTwo;
-      resultTwoOptionThree = object.resultThree;      
+      resultTwoOptionThree = object.resultThree;
 
       // resultOptionOne = resultTwoOptionOne;
       resultOptionTwo = resultTwoOptionTwo;
@@ -511,9 +504,21 @@ window.onload = () => {
           1
         )
       );
-      console.log("some space");
+      // console.log("some space");
+      // console.log(questions.length);
 
-      console.log(questions.length);
+      // scores
+      optionScore = object.optionOneMoneyAdded - object.optionOneMoneyRemoved;
+      score = score + optionScore;
+
+      // the game ends if the score is less than 0
+      if (score <= 0) {
+        // the game ends!
+        lastPage.style.display = "block";
+        firstQuestionResponseResult.style.display = "none";
+        scoreText.textContent = 0;
+      }
+      scoreText.textContent = score;
 
       currentDay = currentDay + 1;
       currentDays.textContent = currentDay;
@@ -546,7 +551,6 @@ window.onload = () => {
       resultOptionOne = resultTwoOptionOne;
       // resultOptionTwo = resultTwoOptionTwo;
       resultOptionThree = resultTwoOptionThree;
-      
 
       // search thru amd remove used array obj
       let output = questions.filter((que) => que.id == objOne);
@@ -557,9 +561,19 @@ window.onload = () => {
           1
         )
       );
-      console.log("some space");
+      
+      // scores
+      optionScore = object.optionTwoMoneyAdded - object.optionTwoMoneyRemoved
+      score = score + optionScore;
 
-      console.log(questions.length);
+      // the game ends if the score is less than 0
+      if (score <= 0) {
+        // the game ends!
+        lastPage.style.display = "block";
+        firstQuestionResponseResult.style.display = "none";
+        scoreText.textContent = 0;
+      }
+      scoreText.textContent = score;      
 
       currentDay = currentDay + 1;
       currentDays.textContent = currentDay;
@@ -591,7 +605,6 @@ window.onload = () => {
 
       resultOptionOne = resultTwoOptionOne;
       resultOptionTwo = resultTwoOptionTwo;
-      
 
       // search thru amd remove used array obj
       let output = questions.filter((que) => que.id == objOne);
@@ -602,9 +615,19 @@ window.onload = () => {
           1
         )
       );
-      console.log("some space");
+      
+      // scores
+      optionScore = object.optionThreeMoneyAdded - object.optionThreeMoneyRemoved;
+      score = score + optionScore;
 
-      console.log(questions.length);
+      // the game ends if the score is less than 0
+      if (score <= 0) {
+        // the game ends!
+        lastPage.style.display = "block";
+        firstQuestionResponseResult.style.display = "none";
+        scoreText.textContent = 0;
+      }
+      scoreText.textContent = score;
 
       currentDay = currentDay + 1;
       currentDays.textContent = currentDay;
