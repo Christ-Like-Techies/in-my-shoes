@@ -16,27 +16,93 @@ body {
 .content {
   text-align: center;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 110%;
-  max-height: 100%;
+  align-content: center;
+  /* justify-content: space-between; */
+  margin: 0 auto;
+  padding-top: 4.5%;
+
+  margin-top: 0px;
+}
+.content_image {
+  height: 80%;
+  width: 80%;
 }
 
+.content_image-1 {
+  height: 80%;
+  width: 80%;
+}
+@media only screen and (max-width: 1024px) {
+  .content {
+    /* height: 100%; */
+    /* width: 100%; */
+    margin-top: 15%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .content_image-1 {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 2023px) {
+  .content_image-1 {
+    height: 90%;
+    width: 90%;
+  }
+}
 @media only screen and (orientation: portrait) {
   .content {
-    width: 100%;
-    height: 100%;
     display: block;
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
+    padding: 0px;
+    margin: 0 auto;
+    padding-top: 0px;
   }
 }
 
 .content_head {
   height: 66%;
   display: block;
+  margin-left: 7%;
 }
+
+@media only screen and (orientation: portrait) {
+  .content_head {
+    height: 66%;
+    display: block;
+    margin-left: 0px;
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  .content_image {
+    height: 100%;
+    width: 100%;
+  }
+  .content_head {
+    margin-left: 0px;
+  }
+  .content_head-top {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 0px) and (orientation: landscape) {
+  .content_head-top {
+    display: none;
+  }
+}
+@media only screen and (orientation: portrait) {
+  .content_image {
+    height: 100%;
+    width: 100%;
+  }
+}
+
 @media only screen and (orientation: portrait) {
   .content_head {
     display: block;
@@ -51,44 +117,66 @@ body {
 }
 @media only screen and (orientation: portrait) {
   .content_head-main img {
+    background: url(images/top\ image.jpg) no-repeat top center transparent;
+    background-size: contain;
+
     display: none;
   }
 }
 @media only screen and (orientation: portrait) {
   .content_head-sub img {
     display: none;
+    background: url(images/teddy.jpg) no-repeat top center transparent;
+    background-size: contain;
   }
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
   only screen and (min-resolution: 192dpi) {
   .content_head-main {
-    background: url(top\ image.jpg) no-repeat top center transparent;
+    background: url(images/top\ image.jpg) no-repeat top center transparent;
     background-size: contain;
   }
 }
-
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
   only screen and (min-resolution: 192dpi) {
   .content_head-sub {
-    background: url(teddy.jpg) no-repeat top center transparent;
+    background: url(images/teddy.jpg) no-repeat top center transparent;
     background-size: contain;
   }
 }
+.content_head-top,
 .content_head-main,
 .content_head-sub,
 .content_spent-main {
   background-size: contain;
 }
 
-.content_spent-main {
-  background: url(spent.logo.png) no-repeat top center transparent;
+.content_spent {
+  background: radial-gradient(ellipse at center, #2d3032 20%, #0e1219 70%);
+  margin-top: 9%;
+  margin-right: 9%;
 }
+@media only screen and (orientation: portrait) {
+  .content_spent {
+    background: radial-gradient(ellipse at center, #2d3032 0%, #0e1219 65%);
+    background: url(images/spent.logo.png) no-repeat top center transparent;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi) {
+  .content_spent {
+    background: radial-gradient(ellipse at center, #2d3032 0%, #0e1219 65%);
+  }
+}
+
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
   only screen and (min-resolution: 192dpi) {
   .content_spent-main {
-    background: url(spent.logo.png) no-repeat top center transparent;
+    background: url(images/spent.logo.png) no-repeat top center transparent;
     background-size: contain;
+    padding-top: 0%;
   }
 }
 
@@ -103,5 +191,7 @@ body {
 @media only screen and (orientation: portrait) {
   .content_spent-main img {
     display: none;
+    background: url(images/spent.logo.png) no-repeat top center transparent;
+    background-size: contain;
   }
 }

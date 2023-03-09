@@ -14,6 +14,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* 
+html {
+  font-size: 140%;
+} */
 body {
   background-color: var(--primary);
   color: var(--secondary);
@@ -67,8 +71,11 @@ body {
   gap: 1rem;
   align-items: center;
   justify-content: center;
-  margin: 20vh 2rem 0 2rem;
+  margin: 10vh 5rem 0 5rem;
+  font-size: 12rem;
+  /* width: 100%; */
 }
+
 .j-wrap > :nth-child(1) {
   font-size: 13px;
   font-weight: bold;
