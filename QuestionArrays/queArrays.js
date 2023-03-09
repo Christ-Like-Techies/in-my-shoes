@@ -1,4 +1,4 @@
-let officeTemp = [
+let officeTempArr = [
   {
     note: "One of your co-workers has gotten seriously ill. Because your company doesn’t offer sick days, everyone is contributing $20 to help her out.",
     optionOne: "PITCH IN",
@@ -216,7 +216,7 @@ let officeTemp = [
   },
 ];
 
-let secondShift = [
+let secondShiftArr = [
   {
     note: "One of your co-workers has gotten seriously ill. Because your company doesn’t offer sick days, everyone is contributing $20 to help her out.",
     optionOne: "PITCH IN",
@@ -434,7 +434,7 @@ let secondShift = [
   },
 ];
 
-let joinOurTeam = [
+let joinOurTeamArr = [
   {
     note: "One of your co-workers has gotten seriously ill. Because your company doesn’t offer sick days, everyone is contributing $20 to help her out.",
     optionOne: "PITCH IN",
@@ -651,3 +651,5 @@ let joinOurTeam = [
     id: 12,
   },
 ];
+
+let currentQuestionArr;
