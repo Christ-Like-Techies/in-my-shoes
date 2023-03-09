@@ -29,7 +29,7 @@
           <button id="prove-it-btn">accept the challenge</button>
         </div>
 
-        <div id="can-u-play" >
+        <div id="can-u-play">
           <p>can you make it through the month?</p>
           <button id="find-a-job">find a job</button> or
           <button id="exit-btn">exit</button>
@@ -45,9 +45,104 @@
           <a class="office-temp">office temp</a> <br />
         </div>
 
-        
+        <div id="joinOurTeam">
+          <h1>LET'S HOPE YOU GET SOME GOOD TIPS</h1>
+          <p>The average salary for this job is $8/hr....</p>
+          <h3>$262</h3>
+          <button id="joinOurTeam-cont-btn">Continue</button>
+        </div>
 
-        
+        <div id="secndShiftPrompt">
+          <h1>STAY HEALTHY!</h1>
+          <p>All that lifting and repetitive packing can be brutal...</p>
+          <h3>$306</h3>
+          <button id="secndShiftPrompt-cont-btn">Continue</button>
+        </div>
+
+        <div id="officeTempPrompt">
+          <h1>Hope you make your hours</h1>
+          <p>your monthly pay is...</p>
+          <h3>$306</h3>
+          <button id="officeTempPrompt-cont-btn">Continue</button>
+        </div>
+
+        <div id="health-plan">
+          <h2>The Affordable Care Act requires you get health insurance....</h2>
+          <h1>WHICH PLAN DO YOU WANT?</h1>
+          <a id="gold">GOLD PLAN</a> <br />
+          <a id="silver">SILVER PLAN</a> <br />
+          <a id="bronze">BRONZE PLAN</a> <br />
+        </div>
+
+        <div id="health-result-gold">
+          <h1>RESULT</h1>
+          <p>
+            Congrats, you've got great coverage and a low co-pay. But you just
+            reduced your weekly paycheck by over 25%.
+          </p>
+          <button id="continue-gold-btn">continue</button>
+        </div>
+
+        <div id="health-result-silver">
+          <h1>RESULT</h1>
+          <p>
+            You've got solid coverage and a medium co-pay. But it's costing you
+            over $110 a paycheck.
+          </p>
+          <button id="continue-silver-btn">continue</button>
+        </div>
+
+        <div id="health-result-bronze">
+          <h1>RESULT</h1>
+          <p>
+            Even the most basic plan under the Affordable Care Act covers more
+            than what you could have gotten before. But at almost $76 each
+            paycheck, it's no free ride.
+          </p>
+          <button id="continue-bronze-btn">continue</button>
+        </div>
+
+        <div id="findAPlace">
+          <h1>FIND A PLACE TO LIVE</h1>
+          <h2>$725 + $83</h2>
+          <h1>$808</h1>
+          <button id="pay-for-place-btn">PAY</button>
+        </div>
+
+        <!-- results prompt from paying for a house -->
+        <div id="findAPlaceResult">
+          <h1>RESULT</h1>
+          <p>
+            You chose to live farther away from your job, so your rent is lower.
+            But your gas costs are higher. In fact, for every dollar a working
+            family saves on housing, they spend an additional 77 cents on
+            transportation.
+          </p>
+          <button id="findAPlaceContinue">Continue</button>
+        </div>
+
+        <!-- next question selected randomly -->
+        <div id="next-random-question">
+          <h2 id="que-note">Your new apartment is too small for your stuff</h2>
+          <h1 id="question">WHAT DO YOU WANT TO DO?</h1>
+          <a id="que-option-one">RENT A STORAGE UNIT ($45)</a> <br />
+          <a id="que-option-two">HAVE A YARD SALE</a> <br />
+          <a id="que-option-three">ASK A FRIEND TO STORE IT</a> <br />
+        </div>
+
+        <!-- next result-question-option related -->
+        <div id="next-result-question-option">
+          <h1>RESULT</h1>
+          <h3 id="result-statement">some text of the results</h3>
+          <button id="result-que-continue">continue</button>
+        </div>
+
+        <div id="last-page">
+          <h1>Last Page</h1>
+          <button id="play-again-btn" onClick="window.location.reload();">
+            play again
+          </button>
+        </div>
 
         <img src="/images/logo.png" class="spent-logo" alt="spentLogo" />
       </div>
