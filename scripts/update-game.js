@@ -163,7 +163,7 @@ payForPlaceBtn.addEventListener("click", function () {
 });
 
 // ==========================================================
-// implementing the selecting of questions randomly
+// implementing the selection of questions randomly
 // ===========================================================
 
 const nextRandomQuestion = document.getElementById("next-random-question");

@@ -205,3 +205,9 @@ img {
 #findAPlaceResult{
   display: none;
 }
+#next-random-question{
+  display: none;
+}
+#next-result-question-option{
+  display: none;
+}
