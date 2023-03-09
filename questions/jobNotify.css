@@ -160,3 +160,14 @@ img {
   left: -0.6rem;
   margin-top: -0.2rem;
 }
+
+
+/* ==================================================== */
+
+#can-u-play {
+  display: none;
+}
+
+#job-options {
+  display: none;
+}
