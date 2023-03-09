@@ -161,7 +161,6 @@ img {
   margin-top: -0.2rem;
 }
 
-
 /* ==================================================== */
 
 #can-u-play {
@@ -169,5 +168,40 @@ img {
 }
 
 #job-options {
+  display: none;
+}
+
+#joinOurTeam {
+  display: none;
+}
+#secndShiftPrompt {
+  display: none;
+}
+#officeTempPrompt {
+  display: none;
+}
+
+#last-page {
+  display: none;
+}
+
+#health-plan {
+  display: none;
+}
+
+#health-result-gold {
+  display: none;
+}
+
+#health-result-silver {
+  display: none;
+}
+#health-result-bronze {
+  display: none;
+}
+#findAPlace{
+  display: none;
+}
+#findAPlaceResult{
   display: none;
 }
