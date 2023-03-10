@@ -1,0 +1,15 @@
+how the program works...
+we have a arr
+
+
+there will be a result template, that will choose the random questions that will asked,
+the result template(div) will contain a button, when clicked chooses an object, this object will
+contain the particular question, note, options, results and all needed for that question.
+
+the continue button when clicked will display the questions on the html, and set the result
+display to none.
+
+when a user chooses an option from the list of options in the question, the option will be
+recorded as to display in the result template.
+
+the result template will contain 4 spans to show the result options
